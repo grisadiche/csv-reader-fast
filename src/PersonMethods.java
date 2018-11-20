@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -219,12 +218,12 @@ public class PersonMethods {
                 return;
             }
             Attribute listAttribute = Attribute.valueOf(listValue.toUpperCase());
-            System.out.println(chooseMap(listAttribute));
+            System.out.println(chooseMap(listAttribute).keySet());
 
-            System.out.println("Which value would you like to sort by? Choose a specific value from the list above");
+            System.out.println("Which key would you like to sort by? Choose a specific key from the list above");
             String categoryValue = reader.nextLine();
             if (categoryValue.length() == 0 || !chooseMap(listAttribute).keySet().toString().toUpperCase().contains(categoryValue.toUpperCase())) {
-                System.out.println("\n\n***Please enter a value to sort by. Restart program.\n\n");
+                System.out.println("\n\n***Please enter a KEY to sort by. Restart program.\n\n");
                 getPopulation(personList);
                 return;
             }
